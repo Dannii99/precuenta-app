@@ -1,0 +1,15 @@
+{
+  "ecosystem_commit": "6d77469da72177af79003ba0b0e02ab61cce8902",
+  "installed_at": "2026-07-30T02:57:46Z",
+  "agent": "opencode",
+  "skills": [
+    { "name": "accessibility-a11y", "group": "core", "sha256": "50bd9792c0cf7545ebc645e3698befd8bde7f1ad63e90eac04b1b424132e0eb2" },
+    { "name": "documentation-writer", "group": "core", "sha256": "d4279f729841e592dea44a2a19a82edc47cdae75c4db58b6ac7104c6973cf9f1" },
+    { "name": "frontend-clean-code", "group": "core", "sha256": "1fcd359151f123e329187399e51c222d8a7d52c0920ec99f06faa1d14a142e3e" },
+    { "name": "frontend-design-principles", "group": "core", "sha256": "dcddbeea6b1fea5e04f05c278b0737cf28be7153952fc317b3aaaffff803a5f1" },
+    { "name": "frontend-security", "group": "core", "sha256": "bd0f70300c8e9a07e440651310265cbbabf10569f1fb95d647de1e84a976c2b9" },
+    { "name": "motion-design-system", "group": "core", "sha256": "fbea09e037363b197db7b0ab4e3d8ddec13489ad02cff3317e86d5137fb1a66a" },
+    { "name": "ui-visual-craft", "group": "core", "sha256": "9c95649d07d6c45b1d689fabd907640f1c55dc5c9250cbe04fc70ee390516567" },
+    { "name": "angular-architecture", "group": "angular", "sha256": "86403b33b339893534e9e7dab50c7e34f7dd8ccc2cbd163aa276a0102ac89249" }
+  ]
+}
