@@ -1,0 +1,55 @@
+<div class="entry-shell">
+  <!-- HEADER con volver -->
+  <header class="flex items-center gap-3 mb-4">
+    <a nz-button nzType="text" routerLink="/" aria-label="Volver">
+      <svg lucideArrowLeft size="24" aria-hidden="true"></svg>
+    </a>
+    <h1 class="m-0 text-lg font-semibold">Agregar producto</h1>
+  </header>
+
+  @if (added) {
+    <!-- CONFIRMACIÓN -->
+    <section class="flex flex-col items-center justify-center flex-1 gap-4">
+      <svg lucideShoppingCart size="48" class="text-green-500" aria-hidden="true"></svg>
+      <p class="text-lg font-medium text-green-700">Agregado {{ formatCop(addedPrice) }}</p>
+      <p class="text-gray-400 text-sm">Volviendo al carrito…</p>
+    </section>
+  } @else {
+    <!-- FORMULARIO -->
+    <form [formGroup]="form" class="flex flex-col gap-3 mb-4">
+      <div class="flex flex-col gap-1">
+        <label class="font-medium text-sm" for="manual-name">{{ text.NAME }} <span class="text-gray-400">(opcional)</span></label>
+        <input
+          nz-input
+          id="manual-name"
+          formControlName="name"
+          placeholder="Ej: Leche"
+          class="w-full"
+        />
+      </div>
+      <div class="flex flex-col gap-1">
+        <label class="font-medium text-sm" for="manual-price">{{ text.PRICE }}</label>
+        <div class="price-display">
+          <span class="price-value" [class.text-gray-400]="(form.get('price')?.value ?? 0) === 0">
+            {{ (form.get('price')?.value ?? 0) === 0 ? '$ 0' : formatCop(form.get('price')?.value ?? 0) }}
+          </span>
+        </div>
+      </div>
+    </form>
+
+    <!-- TECLADO NUMÉRICO -->
+    <app-numeric-keypad (keyPressed)="onKey($event)" [disabled]="added"></app-numeric-keypad>
+
+    <!-- BOTÓN CONFIRMAR -->
+    <button
+      nz-button
+      nzType="primary"
+      nzSize="large"
+      class="w-full mt-4"
+      [disabled]="!form.valid || added"
+      (click)="confirmar()"
+    >
+      {{ text.ADD }}
+    </button>
+  }
+</div>

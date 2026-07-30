@@ -1,0 +1,11 @@
+{
+  "name": "Carrito — Cuánto llevo en el super",
+  "short_name": "Carrito",
+  "description": "Escané etiquetas y llevá el total de tu compra en vivo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1890ff",
+  "lang": "es-CO",
+  "icons": []
+}
