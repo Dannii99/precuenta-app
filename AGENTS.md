@@ -94,11 +94,16 @@ de negocio viven en `docs/project-context.md` (secciones "Propuesta de
 valor" / "Reglas de negocio", si ese archivo existe); los specs técnicos ya
 aprobados viven en `openspec/specs/`. No dupliques ese contenido acá.
 
-- Stack: <!-- TODO: completar — ej: Angular 18, TypeScript 5.x -->
-- Comando de build: <!-- TODO: completar — ej: ng build --configuration production -->
-- Comando de test: <!-- TODO: completar — ej: npm test -->
+- Stack: Angular 21, TypeScript 5.9 · UI: ng-zorro-antd + @lucide/angular (iconos) + Tailwind CSS 4 · SCSS en componentes · RxJS 7.8 · Tests: Vitest + jsdom · npm 11
+- Comando de build: `npm run build` (= `ng build --configuration production`; AOT activo por defecto en Angular 21, `outputHashing: all`, budget initial 500kB/1MB)
+- Comando de test: `npm test` (Vitest vía `@angular/build:unit-test`)
 - Convenciones específicas: <!-- TODO: completar — lo puntual de este cliente -->
-- Restricciones técnicas: <!-- TODO: completar — ej: debe soportar IE11, sin analytics de terceros, data residency en UE -->
+- Restricciones técnicas:
+  - UI solo con las librerías instaladas: componentes de ng-zorro-antd, iconos de @lucide/angular y utilidades de Tailwind. Prohibido crear componentes custom que dupliquen lo que ng-zorro ya resuelve o instalar librerías de UI alternativas.
+  - No hardcodear valores: colores y espaciado salen de tokens (`src/theme.less` / Tailwind), textos y configuración van en constantes o archivos dedicados; cero magic strings ni valores inline en componentes.
+  - Todo cambio no trivial sigue el flujo OpenSpec (`/fea:plan` → `/fea:execute` → `/fea:verify` → `/fea:archive`); no se implementa contra prompts sueltos.
+  - Formateo con Prettier según `.prettierrc` (printWidth 100, singleQuote, parser angular en HTML).
+  - No agregar dependencias nuevas sin aprobación explícita.
 
 ### Excepciones a los estándares
 

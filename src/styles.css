@@ -1,0 +1,111 @@
+@layer vendor {
+  @import "ng-zorro-antd/ng-zorro-antd.css";
+}
+
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #924cfa;
+
+  /* Semantic tokens that change based on theme class */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text-base: var(--text-base);
+  --color-text-muted: var(--text-muted);
+
+  /* Reference colors from guidelines */
+  --color-background-light: #f7f5f8;
+  --color-background-dark: #170f23;
+  --color-surface-dark: #251b36;
+  --color-border-dark: #3a2d52;
+
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+@layer base {
+  :root {
+    --background: #f7f5f8;
+    --surface: #ffffff;
+    --border: #e2e8f0;
+    --text-base: #1e293b;
+    --text-muted: #64748b;
+  }
+
+  .dark {
+    --background: #170f23;
+    --surface: #251b36;
+    --border: #3a2d52;
+    --text-base: #ffffff;
+    --text-muted: #94a3b8;
+  }
+
+  body {
+    @apply bg-background font-display text-text-base transition-colors duration-300;
+  }
+
+  /* Custom Scrollbar Styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  /* Webkit Browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: background 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #924cfa; /* Primary purple on hover */
+    background-clip: border-box;
+  }
+}
+
+/* NG-ZORRO overrides for dark mode support if needed */
+.dark {
+  .ant-layout {
+    background: var(--background);
+  }
+}
+
+
+
+:is(html, body) {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 660px) {
+  :is(html, body) {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  :is(html, body) {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  :is(html, body) {
+    font-size: 18px;
+  }
+}
