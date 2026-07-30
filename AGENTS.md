@@ -95,7 +95,7 @@ valor" / "Reglas de negocio", si ese archivo existe); los specs técnicos ya
 aprobados viven en `openspec/specs/`. No dupliques ese contenido acá.
 
 - Stack: Angular 21, TypeScript 5.9 · UI: ng-zorro-antd + @lucide/angular (iconos) + Tailwind CSS 4 · SCSS en componentes · RxJS 7.8 · Tests: Vitest + jsdom · npm 11
-- Comando de build: `npm run build` (= `ng build --configuration production`; AOT activo por defecto en Angular 21, `outputHashing: all`, budget initial 500kB/1MB)
+- Comando de build: `npm run build` (= `ng build --configuration production`; AOT activo por defecto en Angular 21, `outputHashing: all`, budget initial 1.5MB/2MB)
 - Comando de test: `npm test` (Vitest vía `@angular/build:unit-test`)
 - Convenciones específicas: <!-- TODO: completar — lo puntual de este cliente -->
 - Restricciones técnicas:
